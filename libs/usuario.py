@@ -108,7 +108,30 @@ class CEP(str):
 
 
 class NomeUsuario(str):
-    pass
+    class TipoInvalido(Exception):
+        pass
+
+    class NomeUsuarioInvalido(Exception):
+        pass
+
+    def __new__(cls, nome_usuario: str):
+        return super().__new__(cls, nome_usuario)
+
+    def __init__(self, nome_usuario: str):
+        self._verificar_tipo(nome_usuario)
+        self._verificar_nome_usuario(nome_usuario)
+
+    @classmethod
+    def _verificar_tipo(cls, nome_usuario: str):
+        if not isinstance(nome_usuario, str):
+            raise cls.TipoInvalido(
+                "O nome de usuário precisa ser criado a partir de um tipo string/texto."
+            )
+
+    @classmethod
+    def _verificar_nome_usuario(cls, nome_usuario: str):
+        if not nome_usuario:
+            raise cls.NomeUsuarioInvalido("Nome de usuário precisa ser preenchido.")
 
 
 class CPF(str):
