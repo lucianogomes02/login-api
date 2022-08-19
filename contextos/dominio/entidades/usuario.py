@@ -7,12 +7,13 @@ from libs.usuario import (
     Complemento,
     CEP,
 )
+from contextos.dominio.objetos_de_valor.usuario import Pais, Estado
 
 
 @dataclass_validate
 @dataclass
 class Endereco:
-    id_endereco: IdEndereco
+    id: IdEndereco
     logradouro: Logradouro
     numero: Numero
     complemento: Complemento

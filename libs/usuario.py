@@ -31,3 +31,19 @@ class Estado(str):
 
 class CEP(str):
     pass
+
+
+class NomeUsuario(str):
+    pass
+
+
+class CPF(str):
+    pass
+
+
+class PIS(str):
+    pass
+
+
+class Senha(str):
+    pass
