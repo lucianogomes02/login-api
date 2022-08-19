@@ -60,7 +60,9 @@ class Numero(str):
     @classmethod
     def _verificar_numero(cls, numero: str):
         if not numero and not numero.isdigit():
-            raise cls.NumeroInvalido("Número inválido! Apenas carácteres númericos são permitidos.")
+            raise cls.NumeroInvalido(
+                "Número inválido! Apenas carácteres númericos são permitidos."
+            )
 
 
 class Complemento(str):
@@ -99,7 +101,10 @@ class CEP(str):
     @classmethod
     def _verificar_cep(cls, cep: str):
         if not cep and not cep.isdigit() and not len(cep) == 8:
-            raise cls.CEPInvalido("CEP inválido! Apenas carácteres númericos são permitidos, sendo necessário 8 dígitos para compor o CEP.")
+            raise cls.CEPInvalido(
+                "CEP inválido! Apenas carácteres númericos são permitidos, sendo necessário 8 dígitos "
+                "para compor o CEP."
+            )
 
 
 class NomeUsuario(str):

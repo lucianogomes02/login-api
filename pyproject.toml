@@ -8,6 +8,7 @@ authors = ["Luciano Gomes <luciano@pontotel.com.br>"]
 python = "^3.10"
 Flask = "^2.2.2"
 dataclass-type-validator = "^0.1.2"
+black = "^22.6.0"
 
 [tool.poetry.dev-dependencies]
 
