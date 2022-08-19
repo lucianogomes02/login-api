@@ -76,7 +76,30 @@ class Estado(str):
 
 
 class CEP(str):
-    pass
+    class TipoInvalido(Exception):
+        pass
+
+    class CEPInvalido(Exception):
+        pass
+
+    def __new__(cls, cep: str):
+        return super().__new__(cls, cep)
+
+    def __init__(self, cep: str):
+        self._verificar_tipo(cep)
+        self._verificar_cep(cep)
+
+    @classmethod
+    def _verificar_tipo(cls, cep: str):
+        if not isinstance(cep, str):
+            raise cls.TipoInvalido(
+                "O CEP precisa ser criado a partir de um tipo string/texto."
+            )
+
+    @classmethod
+    def _verificar_cep(cls, cep: str):
+        if not cep and not cep.isdigit() and not len(cep) == 8:
+            raise cls.CEPInvalido("CEP inválido! Apenas carácteres númericos são permitidos, sendo necessário 8 dígitos para compor o CEP.")
 
 
 class NomeUsuario(str):
