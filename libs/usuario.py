@@ -10,7 +10,30 @@ class IdEndereco(UUID):
 
 
 class Logradouro(str):
-    pass
+    class TipoInvalido(Exception):
+        pass
+
+    class LogradouroInvalido(Exception):
+        pass
+
+    def __new__(cls, logradouro: str):
+        return super().__new__(cls, logradouro)
+
+    def __init__(self, logradouro: str):
+        self._verificar_tipo(logradouro)
+        self._verificar_logradouro(logradouro)
+
+    @classmethod
+    def _verificar_tipo(cls, logradouro: str):
+        if not isinstance(logradouro, str):
+            raise cls.TipoInvalido(
+                "O logradouro precisa ser criado a partir de um tipo float."
+            )
+
+    @classmethod
+    def _verificar_logradouro(cls, logradouro: str):
+        if not logradouro and not logradouro.isalnum():
+            raise cls.LogradouroInvalido("Logradouro inválido! Verifique o logradouro e tente novamente.")
 
 
 class Numero(str):
