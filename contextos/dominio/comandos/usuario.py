@@ -13,7 +13,7 @@ class AlterarUsuario(Comando):
 
 
 @dataclass
-class DeletarUsuario(Comando):
+class RemoverUsuario(Comando):
     pass
 
 
