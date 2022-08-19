@@ -1,27 +1,28 @@
 from dataclasses import dataclass
 from . import Evento
+from libs.usuario import IdUsuario
 
 
 @dataclass
 class UsuarioCadastrado(Evento):
-    pass
+    id_usuario: IdUsuario
 
 
 @dataclass
 class UsuarioAlterado(Evento):
-    pass
+    id_usuario: IdUsuario
 
 
 @dataclass
 class UsuarioRemovido(Evento):
-    pass
+    id_usuario: IdUsuario
 
 
 @dataclass
 class UsuarioLogado(Evento):
-    pass
+    id_usuario: IdUsuario
 
 
 @dataclass
 class UsuarioDeslogado(Evento):
-    pass
+    id_usuario: IdUsuario
