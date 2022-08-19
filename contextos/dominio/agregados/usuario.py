@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from dataclass_type_validator import dataclass_validate
-from typing import List
+from typing import List, Optional
 
 from . import Agregado
 from libs.usuario import (
@@ -20,5 +20,5 @@ class Usuario(Agregado):
     nome: NomeUsuario
     enderecos: List[Endereco]
     cpf: CPF
-    pis: PIS
+    pis: Optional[PIS]
     senha: Senha

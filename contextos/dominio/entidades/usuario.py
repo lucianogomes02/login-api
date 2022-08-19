@@ -1,4 +1,6 @@
 from dataclasses import dataclass
+from typing import Optional
+
 from dataclass_type_validator import dataclass_validate
 from libs.usuario import (
     IdEndereco,
@@ -16,7 +18,7 @@ class Endereco:
     id: IdEndereco
     logradouro: Logradouro
     numero: Numero
-    complemento: Complemento
+    complemento: Optional[Complemento]
     cep: CEP
     pais: Pais
     estado: Estado
