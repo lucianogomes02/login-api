@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from dataclass_type_validator import dataclass_validate
 from typing import Optional
 
-from . import Agregado
+from contextos.dominio.agregados import Agregado
 from libs.usuario import (
     IdUsuario,
     NomeUsuario,
@@ -11,6 +11,7 @@ from libs.usuario import (
     Senha,
 )
 from contextos.dominio.entidades.usuario import Endereco
+from contextos.dominio.comandos.usuario import CadastrarUsuario
 
 
 @dataclass_validate
@@ -23,17 +24,26 @@ class Usuario(Agregado):
     pis: Optional[PIS]
     senha: Senha
 
-    def cadastrar_empregado(self):
+    @classmethod
+    def cadastrar_usuario(cls, cadastrar_usuario: CadastrarUsuario):
+        # TODO implementar lógica de CADASTRAR USUARIO aqui
+        return cls(
+            cadastrar_usuario.id_usuario,
+            cadastrar_usuario.nome,
+            cadastrar_usuario.endereco,
+            cadastrar_usuario.cpf,
+            cadastrar_usuario.pis,
+            cadastrar_usuario.senha
+        )
+
+    def alterar_usuario(self):
         pass
 
-    def alterar_empregado(self):
+    def remover_usuario(self):
         pass
 
-    def remover_empregado(self):
+    def logar_usuario(self):
         pass
 
-    def logar_empregado(self):
-        pass
-
-    def deslogar_empregado(self):
+    def deslogar_usuario(self):
         pass

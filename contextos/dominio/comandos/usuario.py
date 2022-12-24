@@ -1,11 +1,19 @@
 from dataclasses import dataclass
-from . import Comando
-from libs.usuario import IdUsuario
+from typing import Optional
+
+from contextos.dominio.comandos import Comando
+from libs.usuario import IdUsuario, NomeUsuario, CPF, PIS, Senha
+from contextos.dominio.entidades.usuario import Endereco
 
 
 @dataclass
 class CadastrarUsuario(Comando):
     id_usuario: IdUsuario
+    nome: NomeUsuario
+    endereco: Endereco
+    cpf: CPF
+    pis: Optional[PIS]
+    senha: Senha
 
 
 @dataclass
