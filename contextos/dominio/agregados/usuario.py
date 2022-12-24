@@ -22,3 +22,18 @@ class Usuario(Agregado):
     cpf: CPF
     pis: Optional[PIS]
     senha: Senha
+
+    def cadastrar_empregado(self):
+        pass
+
+    def alterar_empregado(self):
+        pass
+
+    def remover_empregado(self):
+        pass
+
+    def logar_empregado(self):
+        pass
+
+    def deslogar_empregado(self):
+        pass
