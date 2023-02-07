@@ -11,7 +11,7 @@ from libs.usuario import (
     Senha,
 )
 from contextos.dominio.entidades.usuario import Endereco
-from contextos.dominio.comandos.usuario import CadastrarUsuario
+from contextos.dominio.comandos.usuario import CadastrarUsuario, AlterarUsuario
 
 
 @dataclass_validate
@@ -36,8 +36,11 @@ class Usuario(Agregado):
             cadastrar_usuario.senha
         )
 
-    def alterar_usuario(self):
-        pass
+    @classmethod
+    def alterar_usuario(cls, alterar_usuario: AlterarUsuario):
+        # TODO implementar lógica de ALTERAR USUARIO aqui
+        # TODO validar classmethod
+        return cls(alterar_usuario.id_usuario)
 
     def remover_usuario(self):
         pass
