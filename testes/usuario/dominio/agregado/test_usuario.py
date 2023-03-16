@@ -19,10 +19,10 @@ from contextos.dominio.comandos.usuario import CadastrarUsuario, AlterarUsuario
 
 def test_cadastrar_usuario():
     comando = CadastrarUsuario(
-        id_usuario=IdUsuario(int=0x12345678123456781234567812345678),
+        id_usuario=IdUsuario(),
         nome=NomeUsuario("Usuario Teste Cadastro"),
         endereco=Endereco(
-            id=IdEndereco(int=0x12345678123456781234567812345678),
+            id=IdEndereco(),
             logradouro=Logradouro("Rua Teste"),
             numero=Numero("123"),
             complemento=Complemento(""),
@@ -45,11 +45,11 @@ def test_alterar_usuario():
         id_usuario=IdUsuario(),
         nome=NomeUsuario("Usuario Teste Cadastro"),
         endereco=Endereco(
-            id=IdEndereco(int=0x12345678123456781234567812345678),
+            id=IdEndereco(),
             logradouro=Logradouro("Rua Teste"),
             numero=Numero("123"),
             complemento=Complemento(""),
-            cep=CEP("00000000"),
+            cep=CEP("00000-000"),
             pais=Pais.BRASIL,
             estado=Estado.SAO_PAULO,
         ),

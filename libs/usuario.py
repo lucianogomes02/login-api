@@ -98,7 +98,7 @@ class CEP(str):
 
     @classmethod
     def _verificar_cep(cls, cep: str):
-        if cep and not cep.isdigit() and not len(cep) == 8:
+        if cep and not cep.isdigit() and not len(cep) == 9:
             raise cls.CEPInvalido(
                 "CEP inválido! Apenas carácteres númericos são permitidos, sendo necessário 8 dígitos "
                 "para compor o CEP."
