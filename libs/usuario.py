@@ -59,7 +59,7 @@ class Numero(str):
 
     @classmethod
     def _verificar_numero(cls, numero: str):
-        if not numero and not numero.isdigit():
+        if numero and not numero.isdigit():
             raise cls.NumeroInvalido(
                 "Número inválido! Apenas carácteres númericos são permitidos."
             )
