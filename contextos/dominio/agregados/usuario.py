@@ -33,14 +33,13 @@ class Usuario(Agregado):
             cadastrar_usuario.endereco,
             cadastrar_usuario.cpf,
             cadastrar_usuario.pis,
-            cadastrar_usuario.senha
+            cadastrar_usuario.senha,
         )
 
-    @classmethod
-    def alterar_usuario(cls, alterar_usuario: AlterarUsuario):
+    def alterar_usuario(self, alterar_usuario: AlterarUsuario):
         # TODO implementar lógica de ALTERAR USUARIO aqui
         # TODO validar classmethod
-        return cls(alterar_usuario.id_usuario)
+        return alterar_usuario.id_usuario
 
     def remover_usuario(self):
         pass

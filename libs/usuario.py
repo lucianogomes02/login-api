@@ -84,12 +84,10 @@ class CEP(str):
     class CEPInvalido(Exception):
         pass
 
-    def __new__(cls, cep: str):
-        return super().__new__(cls, cep)
-
     def __init__(self, cep: str):
         self._verificar_tipo(cep)
         self._verificar_cep(cep)
+        super().__init__()
 
     @classmethod
     def _verificar_tipo(cls, cep: str):
@@ -100,7 +98,7 @@ class CEP(str):
 
     @classmethod
     def _verificar_cep(cls, cep: str):
-        if not cep and not cep.isdigit() and not len(cep) == 8:
+        if cep and not cep.isdigit() and not len(cep) == 8:
             raise cls.CEPInvalido(
                 "CEP inválido! Apenas carácteres númericos são permitidos, sendo necessário 8 dígitos "
                 "para compor o CEP."
