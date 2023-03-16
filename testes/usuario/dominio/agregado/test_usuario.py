@@ -42,7 +42,7 @@ def test_cadastrar_usuario():
 
 def test_alterar_usuario():
     cadastrar_usuario = CadastrarUsuario(
-        id_usuario=IdUsuario(int=0x12345678123456781234567812345678),
+        id_usuario=IdUsuario(),
         nome=NomeUsuario("Usuario Teste Cadastro"),
         endereco=Endereco(
             id=IdEndereco(int=0x12345678123456781234567812345678),

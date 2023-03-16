@@ -1,12 +1,14 @@
-from uuid import UUID
+from uuid import UUID, uuid4
 
 
 class IdUsuario(UUID):
-    pass
+    def __init__(self):
+        super().__init__(str(uuid4()))
 
 
 class IdEndereco(UUID):
-    pass
+    def __init__(self):
+        super().__init__(str(uuid4()))
 
 
 class Logradouro(str):
@@ -16,12 +18,10 @@ class Logradouro(str):
     class LogradouroInvalido(Exception):
         pass
 
-    def __new__(cls, logradouro: str):
-        return super().__new__(cls, logradouro)
-
     def __init__(self, logradouro: str):
         self._verificar_tipo(logradouro)
         self._verificar_logradouro(logradouro)
+        super().__init__()
 
     @classmethod
     def _verificar_tipo(cls, logradouro: str):
